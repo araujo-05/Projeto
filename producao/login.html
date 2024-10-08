@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="estilos/login.css">
+    </head>
+    <body>
+        <div class="login_principal">
+            <header>              
+            </header>
+            <section>
+                <form action="cadastro.php" method="post">
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input type="email" name="usuariol" id="form1Example1" class="form-control" />
+                      <label class="form-label" for="form1Example1">Email address</label>
+                    </div>
+                  
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input type="password" name="senha" id="form1Example2" class="form-control" />
+                      <label class="form-label" for="form1Example2">Password</label>
+                    </div>
+                  
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                      <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                          <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                      </div>
+                  
+                      <div class="col">
+                        <!-- Simple link -->
+                        <a href="#!">Forgot password?</a>
+                      </div>
+                    </div>
+                  
+                    <!-- Submit button -->
+                    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block">Sign in</button>
+                  </form>
+                    <!--<a href="cadastro.php" style="color: white;">Não tem cadstro? Clique aqui</a>-->
+                </form></center>
+            </section>
+            <div>
+                <footer>
+                    <p>&copy;abraao.ar05@gmail.com</p>
+                </footer>
+            </div>
+        </div> 
+        <script>
+        import { Input, Ripple, initMDB } from "mdb-ui-kit";
+        initMDB({ Input, Ripple });
+        </script>
+    </body>
+</html>
