@@ -20,7 +20,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit();
 
     } else{
-        echo "<script>alert('Usuario ou senha incorreta');</script>";
+        $_SESSION['msg'] = "Usuário ou senha inválida";
+        //echo "<script>alert('Usuario ou senha incorreta');</script>";
     }
 }
 
