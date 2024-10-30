@@ -26,3 +26,18 @@ function salvar(){
     let salvar = document.getElementById('salvar')
     salvar.style.display = 'none'
 }
+function home() {
+    let home = document.getElementById('home')
+    document.getElementById('main').src = 'homologacao/dados.php'
+    
+}
+function usuarios() {
+    let uuarios = document.getElementById('usuarios')
+    document.getElementById('main').src = 'homologacao/table_usuarios.php'
+    
+}
+function cadastro() {
+    let uuarios = document.getElementById('usuarios')
+    document.getElementById('main').src = 'homologacao/cadastro.html'
+    
+}

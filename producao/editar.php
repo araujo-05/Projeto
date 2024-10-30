@@ -5,17 +5,15 @@ include_once('conexao.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-    $sql = 'SELECT * FROM usuarios WHERE usuario = ?';
+    $sql = 'SELECT * FROM usuarios WHERE usuario = :USUARIO';
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('s', $_SESSION['username']);
+    $stmt->bindParam(':USUARIO', $_SESSION['username']);
     $stmt->execute();
-
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-    $id = $user['id'];
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-
+    $id = $user['id'];
     $usuario = $_SESSION['username'];
+
     $new_nome = $_GET['new_nome'];
     $new_email = $_GET['new_email'];
     $new_telefone = $_GET['new_telefone'];
@@ -24,30 +22,14 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $new_email = $new_email ?: $user['email'];
     $new_telefone = $new_telefone ?: $user['telefone'];
 
-    $sql = "UPDATE usuarios SET nome = '$new_nome', email = '$new_email', telefone = '$new_telefone' WHERE id = '$id'";
-
-    /*
-    Algo de errado não está certo no código abaixo, não sei o que, mas tem algo errado.
-
-    $sql = "UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = '$id'";
+    $sql = "UPDATE usuarios SET nome = :NOME, email = :EMAIL, telefone = :TELEFONE WHERE id = '$id'";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssi', $new_nome, $new_email, $new_telefone);
+    $stmt->bindParam(':NOME', $new_nome);
+    $stmt->bindParam(':EMAIL', $new_email);
+    $stmt->bindParam(':TELEFONE', $new_telefone);
     $stmt->execute();
-    */
 
-
-    $resultado = mysqli_query($conn, $sql);
-    
-    if (mysqli_insert_id($conn)) {
-        echo "<script> alert('USUARIO CADASTRADO COM SUCESSO') </script>";
-        header("Location: /index.php");
-    }
-    else{
-        echo "<script> alert('[ERRO]') </script>";
-        header("Location: /index.php");
-    }
-
-
+    header("Location: dados.php");
 
 }
 

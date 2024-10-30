@@ -1,6 +1,6 @@
 body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: linear-gradient(rgb(4, 4, 190),black);
+    font-family: Arial, sans-serif;
+    background: rgb(255, 255, 255);
     margin: 0;
     height: 100vh;
     
@@ -10,27 +10,29 @@ body{
     border-radius: 10px;
     color:white;
     width: 350px;
-    height: 430px;
+    height: 380px;
     padding-top: 15px;
     padding-bottom: 1px;
-    background: linear-gradient(rgb(14, 141, 226), rgb(3, 3, 124));
-    box-shadow: 2px 2px 4px 2px rgb(3, 3, 124);
+    background: #333;
     text-align: center;
 }
 
 .login_entrar{
-    height: 40px;
+    margin: 0 auto;
+    height: 35px;
     width: 100px;
-    background: black;
+    background: #242323;
+    border: 1px solid white;
     color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px ;
-    font-size: 15pt;
+    border: none;
+    border-radius: 8px;
+    font-size: 16pt;
+    font-weight: bold;
+    cursor: pointer;
 }
 .login_entrar:hover{
-    background: white;
-    color: black;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     transition: 0.5s;
 
 }
