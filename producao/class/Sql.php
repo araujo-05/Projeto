@@ -6,7 +6,7 @@ class Sql extends PDO{
 
     public function __construct(){
 
-        $this->conn = new PDO("mysql:host=127.0.0.1;dbname=homo", "abraaoc", "#wks#1793");
+        $this->conn = new PDO("mysql:host=127.0.0.1;dbname=prod", "abraaoc", "#wks#1793");
 
     }
 
