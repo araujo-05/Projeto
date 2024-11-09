@@ -21,7 +21,7 @@ $total_usuarios = 0;
     <title>Usuários</title>
     <link rel="icon" href="imagens/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="body_usuario">
@@ -42,8 +42,12 @@ $total_usuarios = 0;
     </div>
     <br>
     <form class="busca_usuario">
-        <label for="busca"><input type="text" name="busca" id="busca" placeholder="Buscar usuario"><input type="submit" class="buscar" value="buscar" id="buscar"></label>
+        <input type="text" name="busca" id="busca" placeholder="Buscar usuário">
+        <button class="btn_buscar" id="buscar">
+            <img src="imagens/lupa.png" alt="Buscar" style="height: 100%; width: 100%;">
+        </button>
     </form>
+
     <br>
     <table width='80%' class='table_usuarios' border='1'>
         <thead>
@@ -71,7 +75,9 @@ $total_usuarios = 0;
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['usuario'] . "</td>";
                     echo "<td>" . $row['telefone'] . "</td>";
-                    echo "<td>" . $row['adm'] . "</td>";
+                    echo "<td>";
+                    echo $row['adm'] == "S" ? "<input type='checkbox' checked>" : "<input type='checkbox'>";
+                    echo "</td>";
                     echo "<td>" . $row['Ativo'] . "</td>";
                     echo "<td><form method='post' action='excluir.php'><input type='hidden' name='id' value=" . $row['id'] . "><button id='apagar'><img height='20px' width='20px' src='imagens/icone-lixeira.png'></button></form></td>";
                     echo "</tr>";

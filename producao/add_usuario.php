@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<script>window.location.reload();</script>';
             exit();
         } catch (Exception $e) {
-            echo "Digite um email válido";
+            echo "Erro ao enviar email: $mail->ErrorInfo";
         }
     }
 }

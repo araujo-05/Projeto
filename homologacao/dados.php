@@ -73,13 +73,13 @@ $sql = 'SELECT * FROM usuarios WHERE usuario = :USUARIO';
                         <tr id="linha_dados">
                             <td>Nome:</td>
                             <td id="nome" class="dado"><?php echo $user['nome'];?></td>
-                            <td class="new_dado" style="display: none;">Novo nome: <input type="text" name="new_nome" id="new_name"></td>
+                            <td class="new_dado" style="display: none;"><input type="text" name="new_nome" id="new_name" value ="<?php echo $user['nome']?>"></td>
                         </tr>
                         <br>
                         <tr id="linha_dados">
                             <td>Email:</td>
                             <td id="email" class="dado"><?php echo $user['email']; ?></td>
-                            <td class="new_dado" style="display: none;">Novo Email: <input type="text" name="new_email" id="new_email"></td>
+                            <td class="new_dado" style="display: none;"><input type="text" name="new_email" id="new_email" value ="<?php echo $user['email']?>"></td>
                         </tr>
                         <br>
                         <!-- <tr id="linha_dados">
@@ -91,16 +91,18 @@ $sql = 'SELECT * FROM usuarios WHERE usuario = :USUARIO';
                         <tr id="linha_dados">
                             <td>Telefone:</td>
                             <td id="telefon" class="dado"><?php echo $user['telefone']; ?></td>
-                            <td class="new_dado" style="display: none;">Novo Telefone: <input type="text" name="new_telefone" id="new_name"></td>
-                        </tr>
-                        <tr style="height: 30px;">
-                            <td colspan="3"><input type="submit" style="display: none; " class="btn_form" id="salvar" onclick="salvar()" value="Salvar" ></td>
-                        </tr>
-                    </table>
+                            <td class="new_dado" style="display: none;"><input type="text" name="new_telefone" id="new_name" value ="<?php echo $user['telefone']?>"></td>
+                        </tr>     
                     <br>
-                    <div>
-                        <input type="button" onclick="mostrar()"  class="btn_form" value="Alterar dados">
-                    </div>
+                    <tr>
+                        <td colspan="3">
+                            <div><center>
+                                <input type="button" onclick="alterar_dados()" id="mostrar" class="btn_form" value="Alterar dados">
+                                <input type="submit" style="display: none; " class="btn_form" id="salvar" onclick="salvar_dados()" value="Salvar" >
+                            </center></div>
+                        </td>
+                    </tr>
+                    </table>
                 </form>
                 <br>
             </section>

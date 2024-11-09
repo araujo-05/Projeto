@@ -22,13 +22,13 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         <title>Cadastro</title>
         <link rel="icon" href="imagens/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="estilos/style.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts/jquery-3.6.0.min.js"></script>
         
     </head>
     <br>
     <body class="body_cadastro">
         <section class="main_cadastro">
-            <form id="formCadastro" action="cadastra.php" method="post">
+            <form id="formCadastro" action="add_usuario.php" method="post">
                     <legend><h2 style="color: rgb(255, 255, 255); font-size: 25pt;"></h2></legend>
                     <strong>
                     <label class="label_cadastro">Nome:</label>

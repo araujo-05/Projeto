@@ -61,14 +61,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Conteúdo do e-mail
             $mail->isHTML(true); // Permite HTML
             $mail->Subject = 'Email';
-            $mail->Body    = 'Email criado';
+            $mail->Body = 'Usuário criado';
     
             // Envia o e-mail
             $mail->send();
             echo '<script>window.location.reload();</script>';
             exit();
         } catch (Exception $e) {
-            echo "Digite um email válido";
+            echo "Erro ao enviar email: $mail->ErrorInfo";
         }
     }
 }

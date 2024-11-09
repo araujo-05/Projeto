@@ -16,7 +16,6 @@ html, body {
     padding: 10px;
     border-radius: 8px;
 }
-
 .nav_index ul {
     list-style-type: none; /* Remove as bolinhas da lista */
     padding: 0;
@@ -37,6 +36,7 @@ html, body {
 .nav_index a:hover {
     text-decoration: none;
 }
+
 .main{
     width: 70%;
     height: 80%;
@@ -132,6 +132,7 @@ html, body {
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .table_dados{
+    text-align: center;
     margin: 0 auto;
     border:transparent;
 }
@@ -175,6 +176,45 @@ html, body {
         transform: rotate(360deg);
     }
 }
+.busca_usuario{
+    border: 10px solid black;
+    padding: 0;
+    width: 13%;
+    height: 45px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+}
+.busca_usuario {
+    border-radius: 8px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    width: 12.8%; /* Define a largura do formulário */
+}
+
+#busca {
+    height: 40px;
+    flex: 1; /* Expande o input para ocupar o espaço restante */
+    border-left: none;
+    background: white;
+    box-sizing: border-box; /* Garante que padding e bordas estejam inclusos na largura total */
+}
+
+.btn_buscar {
+    height: 40px;
+    width: 40px; /* Define a largura fixa do botão para mantê-lo quadrado */
+    padding: 0;
+    border: none;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
 .table_usuarios{
     margin: 0 auto;
     border-collapse: collapse;
