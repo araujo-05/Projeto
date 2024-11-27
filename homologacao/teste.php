@@ -1,9 +1,18 @@
-<?php
-
-include_once('conexao.php');
-$id = 16;
-$sql = 'DELETE FROM usuarios WHERE id = :ID';
-$stmt = $conn->prepare($sql);
-$stmt->bindParam(':ID',$id);
-$stmt->execute();
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background: black;
+            height: 100px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

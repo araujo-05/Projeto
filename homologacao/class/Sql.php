@@ -39,6 +39,10 @@ class Sql extends PDO{
     public function delete($raw_query, $params = array()){
         $stmt = $this->querys($raw_query, $params);
     }
+    public function insert($raw_query, $params = array()){
+        $stmt = $this->querys($raw_query, $params);
+        return;
+    }
 }
 
 ?>

@@ -3,7 +3,7 @@ session_start();
 include_once("conexao.php");
 
 if (!isset($_SESSION['username'])) {
-    header("Location: homologacao/login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -45,8 +45,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <body>
         <br>
         <section>
-            <!-- <iframe id="main" class="main" src="" frameborder="0"></iframe> -->
-            <br>
+            <div class="saldo" id="m_saldo"></div>
+            <input type="text">
         </section>
     <script src="scripts/index.js"></script>
     </body>
