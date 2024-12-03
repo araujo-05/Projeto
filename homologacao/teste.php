@@ -8,7 +8,7 @@
         div{
             background: black;
             height: 100px;
-            width: 300px;
+            width: 360px;
         }
     </style>
 </head>
