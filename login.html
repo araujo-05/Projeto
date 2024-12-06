@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="icon" href="imagens/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="estilos/login.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="login_principal">
+            <header>
+            </header>
+            <section>
+                <form action="" class="login_form">
+                    <div>
+                        <label for="login" style="font-size: 15pt;"><strong>Login:</strong></label>
+                        <br><br>
+                        <input type="text" name="usuariol" placeholder="Digite seu usuário" id="usuario">
+                    </div>
+                    <br><br>
+                    <div>
+                        <label for="senha" style="font-size: 15pt;"><strong>Senha:</strong></label>
+                        <br><br>
+                        <input type="password" name="senha" placeholder="Digite sua senha" id="senha">
+                    </div>
+                    <br>
+                    <div class="aviso">
+                    </div>
+                    <br>
+                    <div id="ent">
+                        <input type="submit" class="login_entrar" onclick="entrar()" id="login_entrar" value="Login" >
+                    </div>
+                    <br/><br>
+                    <a href="cadastro.html" style="color: white;">Não tem cadastro? Clique aqui</a>
+                </form>
+            </section>
+            <div>
+                <footer>
+                    <p>&copy;abraao.ar05@gmail.com</p>
+                </footer>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#login_entrar').click(function() {
+                    event.preventDefault();
+                    // Captura o valor do campo de entrada
+                    const usuario = $('#usuario').val();
+                    const senha = $('#senha').val();
+
+                    // Faz uma requisição AJAX para o script PHP
+                    $.ajax({
+                        url: 'scripts_php/login.php', // Caminho para o arquivo PHP
+                        type: 'POST',
+                        data: { 
+                            usuario: usuario,
+                            senha: senha
+                        },
+                        success: function(response) {
+                            // Exibe a resposta do PHP na div .aviso
+                            $('.aviso').html(response);
+                        },
+                        error: function() {
+                            $('.aviso').html('Erro ao verificar o usuário.');
+                        }
+                    });
+                });
+            });
+        </script> 
+    </body>
+</html>
