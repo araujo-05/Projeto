@@ -1,40 +1,21 @@
 <?php
 
 session_start();
-include_once("conexao.php");
-include_once("config.php");
+include_once("scripts_php/conexao.php");
+include_once("scripts_php/config.php");
 
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 }
 
-$querys = new Sql();
 $usuario = $_SESSION['username'];
-
-// $user = $querys->select('SELECT * FROM usuarios WHERE usuario = :USUARIO', array(":USUARIO" => $usuario));
-// echo json_encode($user);
 
 $sql = 'SELECT * FROM usuarios WHERE usuario = :USUARIO';
  $stmt = $conn->prepare($sql);
  $stmt->bindParam(':USUARIO',$usuario);
  $stmt->execute();
  $user =$stmt->fetch(PDO::FETCH_ASSOC)
- /*if(count($row) > 0)
-     $user = array(
-         "Nome" => $row['nome'],
-         "Email" => $row['email'],
-         "Telefone" => $row['telefone']
-     )
-     echo "<table class='dados_home' border='1px'>";
-     foreach ($user as $key=> $value) {
-         echo "<tr>";
-         echo "<td> ". $key . "</td><td>" .$value . "</td>";
-         echo "</tr>";
-     }
-     echo "</table>";
- }
-     */
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +38,7 @@ $sql = 'SELECT * FROM usuarios WHERE usuario = :USUARIO';
                                 //echo "<li><a href='cadastro.php' id='nav_cadastro' class='nav_cadastro'>Cadastro</a></li>";
                             }
                         ?>
-                        <li><a href="logout.php">Sair</a></li>
+                        <li><a href="scripts_php/logout.php">Sair</a></li>
                     </ul>
                 </nav>
             </div>

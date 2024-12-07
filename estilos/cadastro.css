@@ -1,14 +1,8 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-}
+.body_cadastro{
 
+}
 .main_cadastro {
+    margin: 0 auto;
     background-color: #333;
     color: #fff;
     padding: 50px;
@@ -45,6 +39,24 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+.loader {
+    border: 8px solid #f3f3f3; /* Cor do fundo */
+    border-top: 8px solid #3498db; /* Cor da borda superior */
+    border-radius: 50%;
+    width: 60px; /* Largura do loader */
+    height: 60px; /* Altura do loader */
+    animation: spin 1s linear infinite; /* Animação */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo oculto para o loader */
+.hidden {
+    display: none;
 }
 
 .btn_form_cadastro:hover{

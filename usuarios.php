@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("conexao.php");
+include_once("scripts_php/conexao.php");
 
 $usuario = $_SESSION['username'];
 
@@ -36,7 +36,7 @@ $total_usuarios = 0;
                     echo "<li><a href='usuarios.php' id='nav_usuarios' class='nav_usuarios'>Usuários</a></li>";
                 }
                 ?>
-                <li><a href="logout.php">Sair</a></li>
+                <li><a href="scripts_php/logout.php">Sair</a></li>
             </ul>
         </nav>
     </div>
@@ -100,11 +100,11 @@ $total_usuarios = 0;
             <td height="80px" colspan="8">
                 <form class="add_usuario" action="add_usuario.php" method="post">
                     <label for="nome">Novo</label>
-                    <input type="text" name="nome" id="nome_add" placeholder="Nome" required>
-                    <input type="text" name="email" id="email_add" placeholder="Email" required>
-                    <input type="text" name="usuario" id="usuario_add" placeholder="Usuário" required>
-                    <input type="number" name="telefone" id="telefone_add" placeholder="Telefone" required>
-                    <input type="text" name="senha" id="senha_add" placeholder="Senha" required>
+                    <input type="text" name="nome" class="nome_add" id="nome_add" placeholder="Nome" required>
+                    <input type="text" name="email" class="email_add" id="email_add" placeholder="Email" required>
+                    <input type="text" name="usuario" class="usuario_add" id="usuario_add" placeholder="Usuário" required>
+                    <input type="number" name="telefone" class="telefone_add" id="telefone_add" placeholder="Telefone" required>
+                    <input type="text" name="senha" class="senha_add" id="senha_add" placeholder="Senha" required>
                     <label for="ADM">ADM:<input type="checkbox" name="adm" id="adm" value="S"></label>
                     <input type="submit" name="add" id="add" value="Adicionar">
                 </form>
@@ -126,7 +126,7 @@ $total_usuarios = 0;
                 const busca = $('#busca').val();
 
                 $.ajax({
-                    url: 'busca_usuario.php',
+                    url: 'scripts_php/busca_usuario.php',
                     type: 'POST',
                     data: { busca: busca},
                     success: function(response){
@@ -153,7 +153,7 @@ $total_usuarios = 0;
 
                 // Faz uma requisição AJAX para o script PHP
                 $.ajax({
-                    url: 'add_usuario.php',
+                    url: 'scripts_php/add_usuario.php',
                     type: 'POST',
                     data: { 
                         nome: nome,

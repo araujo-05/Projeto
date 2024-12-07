@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Port = 587; // Porta
     
             // Remetente e Destinatário
-            $mail->setFrom('naoresponda.blip@gmail.com', 'naoresponda');
+            $mail->setFrom('abraao.nrsp@gmail.com', 'naoresponda');
             $mail->addAddress($email);
     
             // Conteúdo do e-mail

@@ -28,40 +28,45 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <br>
     <body class="body_cadastro">
         <section class="main_cadastro">
-            <form id="formCadastro" action="scripts_php/add_usuario.php" method="post">
+            <form id="formCadastro" >
                     <legend><h2 style="color: rgb(255, 255, 255); font-size: 25pt;"></h2></legend>
                     <strong>
                     <label class="label_cadastro">Nome:</label>
-                    <input type="text" class="cadastro_input" name="nome" placeholder="Digite seu nome" required>
+                    <input type="text" class="cadastro_input" name="nome" id="nome_add" placeholder="Digite seu nome" required>
                     <br><br><br>
                     <label class="label_cadastro">E-mail:</label>
-                    <input type="text" class="cadastro_input" name="email" id="email" placeholder="Digite seu email" required>
+                    <input type="text" class="cadastro_input" name="email" id="email_add" placeholder="Digite seu email" required>
                     <br><br><br>
                     <label class="label_cadastro">Usuário:</label>
-                    <input type="text" class="cadastro_input" name="usuario" id="usuario" placeholder="Digite um usuário" required>
+                    <input type="text" class="cadastro_input" name="usuario" id="usuario_add" placeholder="Digite um usuário" required>
                     <br><br>    
                     <button type="button" class="check" id="check">Checar</button>
                     <br><br>
                     <div class="aviso"></div>
                     <br>
                     <label class="label_cadastro">Telefone:</label>
-                    <input type="tel" class="cadastro_input" name="telefone" placeholder="Digite seu telefone" required>
+                    <input type="tel" class="cadastro_input" name="telefone" id="telefone_add" placeholder="Digite seu telefone" required>
                     <br><br><br>
                     <label class="label_cadastro">Senha:</label>
-                    <input type="password" class="cadastro_input" name="senha" placeholder="Digite sua senha" required>
+                    <input type="password" class="cadastro_input" name="senha" id="senha_add" placeholder="Digite sua senha" required>
                     <br><br><br>
                     <center><input type="submit" class="btn_form_cadastro" value="Cadastrar" id="cad"> 
                     <div class="loader hidden" id="loader"></div></center>
                     </strong>
             </form>
+            <div class="erro_cadastro"></div>
+            <div class="loading" style="display: none;">
+                <span></span>
+                <p>Carregando...</p>
+            </div>
         </section>
         <script>
-            $(document).ready(function() {
+        $(document).ready(function() {
             $('#check').click(function() {
                 //Evita o envio padrão do formulário
                 event.preventDefault();
                 // Captura o valor do campo de entrada
-                const usuario = $('#usuario').val();
+                const usuario = $('#usuario_add').val();
 
                 // Faz uma requisição AJAX para o script PHP
                 $.ajax({
@@ -74,6 +79,43 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     },
                     error: function() {
                         $('.aviso').html('Erro ao verificar o usuário.');
+                    }
+                });
+            });
+            $('#cad').click(function(event) {
+                event.preventDefault(); // Impede o envio tradicional do formulário
+
+                // Exibe a div de loading
+                $('.loading').show();
+
+                // Captura os valores dos campos de entrada
+                const nome = $('#nome_add').val();
+                const email = $('#email_add').val();
+                const usuario = $('#usuario_add').val();
+                const telefone = $('#telefone_add').val();
+                const senha = $('#senha_add').val();
+                //const adm = $('#adm').is(':checked') ? 'S' : 'N';
+
+                // Faz uma requisição AJAX para o script PHP
+                $.ajax({
+                    url: 'scripts_php/add_usuario.php',
+                    type: 'POST',
+                    data: { 
+                        nome: nome,
+                        email: email,
+                        usuario: usuario,
+                        telefone: telefone,
+                        senha: senha,
+                        //adm: adm
+                    },
+                    success: function(response) {
+                        // Exibe a resposta do PHP na div .erro_cadastro e oculta o loading
+                        $('.erro_cadastro').html(response);
+                        $('.loading').hide();
+                    },
+                    error: function() {
+                        $('.erro_cadastro').html('Erro ao verificar o usuário.');
+                        $('.loading').hide();
                     }
                 });
             });

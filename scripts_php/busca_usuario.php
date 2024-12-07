@@ -4,10 +4,9 @@ include_once('conexao.php');
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     
-    $busca = "%%". $_POST['busca'] ."%";
+    $busca = "%". $_POST['busca'] ."%";
     $total_usuarios = 0;
 
-    $querys = new Sql();
     $sql ='SELECT * FROM usuarios WHERE CONCAT(nome, "", email, "", usuario, "", telefone, "") LIKE :BUSCA';
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":BUSCA", $busca);

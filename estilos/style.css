@@ -247,7 +247,7 @@ html, body {
     grid-template-columns: repeat(8, 2fr); /* 7 colunas de tamanho igual */
     gap: 5px; /* Ajuste o espaçamento entre elementos */
 }
-#nome_add, #email_add, #usuario_add, #telefone_add, #senha_add{
+.nome_add, .email_add, .usuario_add, .telefone_add, .senha_add {
     width: 250px;
-    height: 25px;
+    height: 35px;
 }
