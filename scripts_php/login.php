@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if($user['usuario'] == $usuariol && $user['senha'] == $senha){
+    if($user && $user['usuario'] == $usuariol && $user['senha'] == $senha){
 
         $_SESSION['username'] = $user['usuario'];
         echo "<script>window.location.assign('index.php')</script>";

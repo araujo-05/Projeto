@@ -1,6 +1,6 @@
 <?php
 $host= '127.0.0.1';
-$bd = 'homo';
+$bd = 'dados';
 $usr = 'abraaoc';
 $pass = '#wks#1793';
 

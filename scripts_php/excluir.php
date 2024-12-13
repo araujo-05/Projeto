@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':ID',$id);
     $stmt->execute();
-    header('Location: usuarios.php');
+    header('Location: ../usuarios.php');
 }
 
 ?>

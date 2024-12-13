@@ -81,7 +81,7 @@ $total_usuarios = 0;
                     echo "<td>";
                     echo $row['Ativo'] == "S" ? "<input type='checkbox' checked>" : "<input type='checkbox'>";
                     echo "</td>";
-                    echo "<td><form method='post' action='excluir.php'><input type='hidden' name='id' value=" . $row['id'] . "><button id='apagar'><img height='20px' width='20px' src='imagens/icone-lixeira.png'></button></form></td>";
+                    echo "<td><form method='post' action='scripts_php/excluir.php'><input type='hidden' name='id' value=" . $row['id'] . "><button id='apagar'><img height='20px' width='20px' src='imagens/icone-lixeira.png'></button></form></td>";
                     echo "</tr>";
                     $total_usuarios++;
                 }
