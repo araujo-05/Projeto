@@ -46,7 +46,10 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <body>
         <br>
         <section>
-            <div class="saldo" id="m_saldo"></div>
+            <div>
+                <input type="text" name="teste_busca" id="teste_busca">
+                
+            </div>
         </section>
     <script src="scripts/index.js"></script>
     </body>

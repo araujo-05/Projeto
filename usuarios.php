@@ -31,6 +31,7 @@ $total_usuarios = 0;
         <nav class="nav_index">
             <ul>
                 <li><a href="dados.php" id="nav_home" class="nav_home">Home</a></li>
+                <li><a href="busca.php" class="nav_home">Busca</a></li>
                 <?php
                 if ($user['adm'] == "S") {
                     echo "<li><a href='usuarios.php' id='nav_usuarios' class='nav_usuarios'>Usuários</a></li>";
