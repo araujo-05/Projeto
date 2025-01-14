@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $stmt->bindParam(':TELEFONE', $new_telefone);
     $stmt->execute();
 
-    header("Location: dados.php");
+    header("Location: ../dados.php");
 
 }
 

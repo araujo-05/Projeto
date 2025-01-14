@@ -191,7 +191,7 @@ html, body {
     display: flex;
     height: 40px;
     align-items: center;
-    width: 12.8%; /* Define a largura do formulário */
+    width: 14%; /* Define a largura do formulário */
 }
 
 #busca {
@@ -249,5 +249,5 @@ html, body {
 }
 .nome_add, .email_add, .usuario_add, .telefone_add, .senha_add {
     width: 250px;
-    height: 35px;
+    height: 30px;
 }

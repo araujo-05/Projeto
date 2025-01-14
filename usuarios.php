@@ -97,10 +97,8 @@ $total_usuarios = 0;
         }
         ?>
         </tbody>
-        <tfoot>
             <td height="80px" colspan="8">
                 <form class="add_usuario" action="add_usuario.php" method="post">
-                    <label for="nome">Novo</label>
                     <input type="text" name="nome" class="nome_add" id="nome_add" placeholder="Nome" required>
                     <input type="text" name="email" class="email_add" id="email_add" placeholder="Email" required>
                     <input type="text" name="usuario" class="usuario_add" id="usuario_add" placeholder="Usuário" required>

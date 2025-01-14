@@ -46,7 +46,7 @@ $sql = 'SELECT * FROM usuarios WHERE usuario = :USUARIO';
         </head>
         <body>
             <section>
-                <form action="editar.php" id="form_editar" mehtod="GET">
+                <form action="scripts_php/editar.php" id="form_editar" mehtod="GET">
                     <table class="table_dados">
                         <thead>
                             <td colspan="3">Dados</td>
