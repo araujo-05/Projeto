@@ -2,7 +2,7 @@
 $host= '127.0.0.1';
 $bd = 'dados';
 $usr = 'abraaoc';
-$pass = '#wks#1793';
+$pass = '#Thunder@#';
 
 $conn = new PDO("mysql:dbname=$bd;host=$host", $usr, $pass);
 
