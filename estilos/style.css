@@ -12,9 +12,11 @@ html, body {
     width: 100%;
 }
 .nav_index{
+    margin: 0 auto;
     background-color: #333;
     padding: 10px;
     border-radius: 8px;
+    max-width: 500px;
 }
 .nav_index ul {
     list-style-type: none; /* Remove as bolinhas da lista */

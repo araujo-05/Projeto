@@ -33,16 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Usuário Indisponível";
     
     } else {
-        $sql = "INSERT INTO usuarios (nome, email, usuario, telefone, senha, adm, Ativo) VALUES (:NOME, :EMAIL, :USUARIO, :TELEFONE, :SENHA, :ADM, :ATIVO)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(":NOME", $nome);
-        $stmt->bindParam(":EMAIL", $email);
-        $stmt->bindParam(":USUARIO", $usuario);
-        $stmt->bindParam(":TELEFONE", $telefone);
-        $stmt->bindParam(":SENHA", $senha);
-        $stmt->bindParam(":ADM", $adm);
-        $stmt->bindParam(":ATIVO", $ativo);
-        $stmt->execute();
             // Cadastro bem-sucedido
         try {
             // Configurações do servidor
@@ -65,6 +55,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
             // Envia o e-mail
             $mail->send();
+            
+            $sql = "INSERT INTO usuarios (nome, email, usuario, telefone, senha, adm, Ativo) VALUES (:NOME, :EMAIL, :USUARIO, :TELEFONE, :SENHA, :ADM, :ATIVO)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":NOME", $nome);
+            $stmt->bindParam(":EMAIL", $email);
+            $stmt->bindParam(":USUARIO", $usuario);
+            $stmt->bindParam(":TELEFONE", $telefone);
+            $stmt->bindParam(":SENHA", $senha);
+            $stmt->bindParam(":ADM", $adm);
+            $stmt->bindParam(":ATIVO", $ativo);
+            $stmt->execute();
             echo '<script>window.location.reload();</script>';
             exit();
         } catch (Exception $e) {
